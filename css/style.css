@@ -1,0 +1,410 @@
+/* ============================================
+   FILE: css/style.css
+   Stylesheet utama Website SMAN 1 Kendari
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Source+Sans+3:wght@400;600&display=swap');
+
+:root {
+    --hijau: #1a6b3c;
+    --hijau-muda: #2d9e5f;
+    --emas: #c9a84c;
+    --putih: #ffffff;
+    --abu-terang: #f4f6f4;
+    --abu: #6b7280;
+    --teks: #1a1a1a;
+    --bayangan: 0 2px 16px rgba(0,0,0,0.10);
+    --radius: 10px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: 'Source Sans 3', sans-serif;
+    background: var(--abu-terang);
+    color: var(--teks);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ---- HEADER ---- */
+.site-header {
+    background: var(--hijau);
+    color: var(--putih);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 14px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-icon { font-size: 2rem; }
+
+.logo-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    color: var(--emas);
+    letter-spacing: 1px;
+}
+
+.logo-sub { font-size: 0.75rem; color: rgba(255,255,255,0.75); }
+
+.main-nav { display: flex; gap: 4px; align-items: center; flex-wrap: wrap; }
+
+.main-nav a {
+    color: rgba(255,255,255,0.88);
+    text-decoration: none;
+    padding: 7px 14px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: background 0.2s, color 0.2s;
+}
+
+.main-nav a:hover { background: rgba(255,255,255,0.15); color: #fff; }
+.nav-admin { background: rgba(201,168,76,0.25); color: var(--emas) !important; }
+.nav-login { background: var(--emas); color: var(--hijau) !important; }
+.nav-logout { background: rgba(255,80,80,0.2); color: #ffaaaa !important; }
+
+/* ---- MAIN CONTENT ---- */
+.main-content {
+    flex: 1;
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 0 24px;
+    width: 100%;
+}
+
+/* ---- HERO ---- */
+.hero {
+    background: linear-gradient(135deg, var(--hijau) 60%, var(--hijau-muda));
+    color: var(--putih);
+    border-radius: var(--radius);
+    padding: 56px 40px;
+    margin-bottom: 32px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '🏫';
+    position: absolute;
+    right: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 8rem;
+    opacity: 0.12;
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.4rem;
+    color: var(--emas);
+    margin-bottom: 10px;
+}
+
+.hero p { font-size: 1.1rem; opacity: 0.9; max-width: 560px; line-height: 1.6; }
+
+/* ---- STAT CARDS ---- */
+.stat-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin-bottom: 32px;
+}
+
+.stat-card {
+    background: var(--putih);
+    border-radius: var(--radius);
+    padding: 24px;
+    text-align: center;
+    box-shadow: var(--bayangan);
+    border-top: 4px solid var(--emas);
+    transition: transform 0.2s;
+}
+
+.stat-card:hover { transform: translateY(-4px); }
+.stat-card .stat-num { font-size: 2.4rem; font-weight: 700; color: var(--hijau); }
+.stat-card .stat-label { color: var(--abu); font-size: 0.9rem; margin-top: 4px; }
+
+/* ---- SECTION TITLE ---- */
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: var(--hijau);
+    margin-bottom: 16px;
+    border-left: 4px solid var(--emas);
+    padding-left: 12px;
+}
+
+/* ---- BERITA CARDS ---- */
+.berita-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    margin-bottom: 32px;
+}
+
+.berita-card {
+    background: var(--putih);
+    border-radius: var(--radius);
+    padding: 20px 24px;
+    box-shadow: var(--bayangan);
+    transition: transform 0.2s, box-shadow 0.2s;
+    border-bottom: 3px solid transparent;
+}
+
+.berita-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 24px rgba(0,0,0,0.13);
+    border-bottom-color: var(--emas);
+}
+
+.berita-card .tanggal {
+    font-size: 0.78rem;
+    color: var(--emas);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+.berita-card h3 { font-size: 1.05rem; color: var(--hijau); margin-bottom: 8px; }
+.berita-card p { font-size: 0.9rem; color: var(--abu); line-height: 1.6; }
+
+/* ---- TABLE ---- */
+.table-wrapper {
+    background: var(--putih);
+    border-radius: var(--radius);
+    box-shadow: var(--bayangan);
+    overflow: hidden;
+    margin-bottom: 24px;
+}
+
+table { width: 100%; border-collapse: collapse; }
+
+thead { background: var(--hijau); color: var(--putih); }
+thead th { padding: 13px 16px; text-align: left; font-size: 0.9rem; }
+
+tbody tr { border-bottom: 1px solid #eee; transition: background 0.15s; }
+tbody tr:hover { background: #f0f7f3; }
+tbody td { padding: 12px 16px; font-size: 0.9rem; }
+
+/* ---- FORM ---- */
+.form-container {
+    background: var(--putih);
+    border-radius: var(--radius);
+    box-shadow: var(--bayangan);
+    padding: 32px;
+    max-width: 480px;
+    margin: 0 auto;
+}
+
+.form-container h2 {
+    font-family: 'Playfair Display', serif;
+    color: var(--hijau);
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+.form-group { margin-bottom: 18px; }
+.form-group label { display: block; font-size: 0.88rem; font-weight: 600; color: var(--abu); margin-bottom: 6px; }
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px 14px;
+    border: 2px solid #dde;
+    border-radius: 7px;
+    font-size: 0.95rem;
+    font-family: inherit;
+    transition: border-color 0.2s;
+    background: #fafafa;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--hijau-muda);
+    background: #fff;
+}
+
+.btn {
+    display: inline-block;
+    padding: 11px 24px;
+    border-radius: 7px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    text-decoration: none;
+    transition: opacity 0.2s, transform 0.15s;
+}
+
+.btn:hover { opacity: 0.88; transform: translateY(-1px); }
+.btn-hijau { background: var(--hijau); color: #fff; }
+.btn-emas { background: var(--emas); color: var(--hijau); }
+.btn-merah { background: #e53e3e; color: #fff; }
+.btn-sm { padding: 6px 14px; font-size: 0.82rem; }
+.btn-block { width: 100%; text-align: center; }
+
+/* ---- ALERT ---- */
+.alert {
+    padding: 12px 18px;
+    border-radius: 7px;
+    margin-bottom: 18px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.alert-sukses { background: #d4edda; color: #155724; border-left: 4px solid #28a745; }
+.alert-error  { background: #f8d7da; color: #721c24; border-left: 4px solid #dc3545; }
+.alert-info   { background: #cce5ff; color: #004085; border-left: 4px solid #007bff; }
+
+/* ---- LOGIN PAGE ---- */
+.login-page {
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-box {
+    background: var(--putih);
+    border-radius: var(--radius);
+    box-shadow: 0 4px 32px rgba(0,0,0,0.13);
+    padding: 40px;
+    width: 100%;
+    max-width: 400px;
+    border-top: 6px solid var(--emas);
+}
+
+.login-logo { text-align: center; margin-bottom: 24px; }
+.login-logo .icon { font-size: 3rem; }
+.login-logo h2 { font-family: 'Playfair Display', serif; color: var(--hijau); margin-top: 8px; }
+.login-logo p { color: var(--abu); font-size: 0.85rem; }
+
+/* ---- ADMIN PANEL ---- */
+.admin-grid {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 24px;
+    align-items: start;
+}
+
+.admin-sidebar {
+    background: var(--putih);
+    border-radius: var(--radius);
+    box-shadow: var(--bayangan);
+    overflow: hidden;
+}
+
+.admin-sidebar h3 {
+    background: var(--hijau);
+    color: var(--emas);
+    padding: 14px 16px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.admin-sidebar a {
+    display: block;
+    padding: 12px 16px;
+    color: var(--teks);
+    text-decoration: none;
+    font-size: 0.9rem;
+    border-bottom: 1px solid #f0f0f0;
+    transition: background 0.15s;
+}
+
+.admin-sidebar a:hover { background: #f0f7f3; color: var(--hijau); }
+.admin-sidebar a.active { background: var(--hijau-muda); color: #fff; font-weight: 600; }
+
+.admin-main {
+    background: var(--putih);
+    border-radius: var(--radius);
+    box-shadow: var(--bayangan);
+    padding: 28px;
+}
+
+/* ---- SEARCH BAR ---- */
+.search-bar {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.search-bar input {
+    flex: 1;
+    padding: 10px 16px;
+    border: 2px solid #dde;
+    border-radius: 7px;
+    font-size: 0.95rem;
+}
+
+/* ---- BADGE ---- */
+.badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+.badge-hijau { background: #d4edda; color: #155724; }
+.badge-merah { background: #f8d7da; color: #721c24; }
+.badge-emas  { background: #fff3cd; color: #856404; }
+
+/* ---- FOOTER ---- */
+.site-footer {
+    background: var(--hijau);
+    color: rgba(255,255,255,0.85);
+    margin-top: auto;
+}
+
+.footer-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 36px 24px 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 24px;
+}
+
+.footer-col h4 { color: var(--emas); margin-bottom: 10px; font-size: 0.95rem; }
+.footer-col p { font-size: 0.85rem; line-height: 1.7; }
+
+.footer-bottom {
+    text-align: center;
+    padding: 14px 24px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    font-size: 0.82rem;
+    color: rgba(255,255,255,0.5);
+}
+
+/* ---- RESPONSIVE ---- */
+@media (max-width: 700px) {
+    .hero h1 { font-size: 1.6rem; }
+    .admin-grid { grid-template-columns: 1fr; }
+    .header-inner { flex-direction: column; align-items: flex-start; }
+}
